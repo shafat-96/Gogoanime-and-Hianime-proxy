@@ -13,8 +13,8 @@ export const m3u8Proxy = async (req: Request, res: Response) => {
       const response = await axios.get(url, {
         responseType: 'stream',
         headers: {
+          Accept: "*/*",
           Referer: "https://megacloud.club/",
-          origin: "https://megacloud.club",
         }
       });
       const headers = Object.fromEntries(response.headers as any);
@@ -26,8 +26,8 @@ export const m3u8Proxy = async (req: Request, res: Response) => {
     const response = await axios.get(url, {
       responseType: 'text',
       headers: {
+        Accept: "*/*",
         Referer: "https://megacloud.club/",
-        origin: "https://megacloud.club",
       }
     });
     const headers = Object.fromEntries(response.headers as any);
